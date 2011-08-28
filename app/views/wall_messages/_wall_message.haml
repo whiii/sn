@@ -1,0 +1,9 @@
+.wall_message
+  .wall_message_author_info
+    = link_to profile_path(wall_message.sender.profile) do
+      .small_user_info
+        = image_tag wall_message.sender.profile.avatar(:thumb)
+        %span
+          = wall_message.sender.firstname
+  .wall_message_text
+    = wall_message.text

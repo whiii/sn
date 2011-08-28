@@ -1,0 +1,13 @@
+%p#notice= notice
+
+%p
+  %img{:src => @photo.image(:for_gallery)}
+%p
+  %b Comment:
+  = @photo.comment
+
+= link_to 'Edit | ', edit_photo_path(@photo) if can?(:edit, @photo)
+
+= link_to 'Delete | ', photo_path(@photo), :method => :delete if can?(:destroy, @photo)
+
+= link_to 'Back to album', album_path(@photo.album)

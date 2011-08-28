@@ -1,0 +1,6 @@
+- friends.each do |friend|
+  = link_to profile_path(friend.profile) do
+    .small_user_info
+      = image_tag friend.profile.avatar(:thumb)
+      %span
+        = friend.firstname

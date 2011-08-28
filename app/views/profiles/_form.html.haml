@@ -1,0 +1,42 @@
+= form_for @profile do |f|
+
+  = f.label :gender
+  %span{:class => 'gender_select'}
+    = f.radio_button :gender, "Male"
+    = f.label "Male"
+  %span{:class => 'gender_select'}
+    = f.radio_button :gender, "Female"
+    = f.label "Female"
+  %br/
+
+  = f.label :birth_date
+  = f.date_select :birth_date
+  %br/
+
+  = f.label :country
+  = f.text_field :country
+  %br/
+
+  = f.label :city
+  = f.text_field :city
+  %br/
+
+  = f.label :school
+  = f.text_field :school
+  %br/
+
+  = f.label :phone_number
+  = f.text_field :phone_number
+  %br/
+
+  = f.label :skype_id
+  = f.text_field :skype_id
+  %br/
+
+  = f.label :icq_number
+  = f.text_field :icq_number
+  %br/
+
+
+
+  = f.submit

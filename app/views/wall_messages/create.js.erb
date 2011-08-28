@@ -1,0 +1,2 @@
+$("#wall_messages_container").html("<%= escape_javascript(render @wall_messages) + escape_javascript(will_paginate @wall_messages) %>");
+$('#wall_message_input').val('');

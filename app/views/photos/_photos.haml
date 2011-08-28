@@ -1,0 +1,4 @@
+#lightbox_gallery
+  - photos.each do |photo|
+    = link_to photo.image(:for_gallery) do
+      %img{:src => photo.image(:thumb)}

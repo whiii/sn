@@ -1,0 +1,9 @@
+-unless contact == current_user
+  %span{:id => "contact_control_#{contact.id}"}
+    -if can?(:accept_friendship_from, contact)
+      = button_to "Add to contacts", contact_path(contact), :method => :post, :remote => true
+    - else
+      - if can?(:remove_from_friends, contact)
+        = button_to "Remove from contacts", contact_path(contact), :method => :delete, :remote => true
+      -else
+        = button_to "Invite to contacts", contact_path(contact), :method => :put, :remote => true

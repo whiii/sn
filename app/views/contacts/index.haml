@@ -1,0 +1,10 @@
+%b
+  = @user.firstname.possessive
+  contacts
+  -if can?(:manage_unaccepted_friends_of, @user)
+    = link_to pending_user_contacts_path(@user) do
+      %b
+        (
+        = @user.potential_friends.count
+        new )
+= render :partial => 'contact', :collection => @contacts

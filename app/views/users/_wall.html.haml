@@ -1,0 +1,9 @@
+%fieldset#wall_container
+  %legend
+    Wall
+  #wall_message_form
+    = form_tag send_wall_message_path(user), :remote => true do
+      = text_area_tag :text, '', :id => :wall_message_input
+      = submit_tag "Write"
+  #wall_messages_container
+    = render user.wall_messages.latest_first

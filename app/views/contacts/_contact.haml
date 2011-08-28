@@ -1,0 +1,28 @@
+.contact_container
+  = link_to contact.profile do
+    = image_tag contact.profile.avatar(:medium), :class => :contact_avatar
+  .contact_info
+    .contact_info_head  
+      = link_to contact.profile do
+        = contact.firstname
+        = contact.lastname
+        , 
+        = pluralize(contact.profile.age, "year")
+    .contact_info_body
+      %p.profile_item
+        %span.profile_key
+          Country
+        %span.profile_value
+          = contact.profile.country
+      %p.profile_item
+        %span.profile_key
+          City
+        %span.profile_value
+          = contact.profile.city
+      %p.profile_item
+        %span.profile_key
+          School
+        %span.profile_value
+          = contact.profile.school
+    .contact_controls
+      = render "contact_controls", :contact => contact

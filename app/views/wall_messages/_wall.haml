@@ -1,0 +1,10 @@
+%fieldset#wall_container
+  %legend
+    Wall
+  #wall_message_form
+    = form_tag user_wall_messages_path(@profile.user), :remote => true do
+      = text_area_tag :text, '', :id => :wall_message_input
+      = submit_tag "Write"
+  #wall_messages_container{"data-wall-messages-url" => user_wall_messages_path(@profile.user)}
+    = render @wall_messages
+    = will_paginate @wall_messages

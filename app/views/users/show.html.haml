@@ -1,0 +1,18 @@
+%p#notice= notice
+
+Email:
+= @user.email
+
+Firstname:
+= @user.firstname
+
+Lastname:
+= @user.lastname
+
+= render @user.profile
+
+= link_to 'Edit user', edit_user_path(@user)
+\|
+= link_to 'Edit profile', edit_profile_path(@user.profile)
+\|
+= link_to 'Back', users_path

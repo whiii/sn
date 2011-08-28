@@ -1,0 +1,26 @@
+%div{:class => 'profile_container'}
+  #profile_head
+    #name_container
+      = @profile.user.firstname
+      &nbsp;
+      = @profile.user.lastname
+    #status_container
+      - if can?(:manage, @profile)
+        = render "profiles/status", :profile => @profile
+      - else
+        %span.status_label
+          = @profile.status if @profile.status.length > 0
+  #profile_body
+    #profile_left_panel
+      %img.avatar{:src => @profile.avatar(:large)}
+      - unless @profile.user == current_user
+        = render "contacts/contact_controls", :contact => @profile.user
+      = button_to "Albums", user_albums_path(@profile.user), :method => :get
+      %fieldset.profile_friends_list
+        %legend
+          = link_to "Contacts", user_contacts_path(@profile.user)
+        = render "users/friends", :friends => @profile.user.friends.nine_first
+    #profile_right_panel
+      = render @profile
+
+      = render "wall_messages/wall"

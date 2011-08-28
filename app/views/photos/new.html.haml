@@ -1,0 +1,6 @@
+.text_head
+  Add photo to &laquo#{@photo.album.name}&raquo
+
+= render 'form'
+
+= link_to 'Back to album', album_path(@photo.album)

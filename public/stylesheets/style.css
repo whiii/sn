@@ -1,0 +1,260 @@
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: verdana, sans-serif; }
+
+a {
+  color: #444444; }
+
+#wrap {
+  min-height: 100%; }
+
+#header {
+  text-align: center;
+  padding-top: 1.5em;
+  height: 4em;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABkCAIAAADITs03AAAAH0lEQVQYlWNoqK9nYmRkhGMGBgYUPjFy5OgZNQ+rOACxsgNBBiLWRwAAAABJRU5ErkJggg==);
+  background-repeat: x-repeat;
+  border-radius: 0 0 1em 1em;
+  border-bottom: 2px solid #666666; }
+  #header h3 {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+    font-size: 2em;
+    letter-spacing: 0.2em;
+    color: white; }
+  #header #sign_out_link {
+    font-size: 0.8em;
+    display: block;
+    float: right;
+    margin-right: 1.5em;
+    margin-top: 0.5em;
+    padding: 0.3em;
+    color: #444444;
+    font-weight: bolder;
+    text-decoration: none;
+    border: 2px solid #444444;
+    border-radius: 0.3em;
+    background: #eeeeee; }
+  #header #sign_out_link:hover {
+    background: #a2a2a2;
+    color: white; }
+
+#sidebar {
+  width: 15em;
+  float: left;
+  border: none;
+  background: #eeeeee;
+  color: #444444;
+  margin: 0.1em;
+  padding: 1em;
+  border-radius: 1em; }
+
+#main {
+  margin-left: 15em;
+  margin: 1em 1em 1em 18em;
+  padding: 1em;
+  background: #eeeeee;
+  border-radius: 1em; }
+
+#footer {
+  width: 100%;
+  height: 3em;
+  background: #666666;
+  clear: both;
+  position: relative;
+  margin-top: -3em;
+  text-align: center; }
+  #footer span {
+    padding-top: 1em;
+    vertical-align: middle;
+    color: white;
+    font-size: 0.8em; }
+
+#container {
+  overflow: auto;
+  padding-bottom: 3em; }
+
+/*Opera footer Fix*/
+body:before {
+  content: "";
+  height: 100%;
+  float: left;
+  width: 0;
+  margin-top: -32767px; }
+
+#user_new {
+  font-size: 0.7em; }
+  #user_new p label {
+    text-align: right;
+    padding-right: 0.5em;
+    display: block;
+    float: left;
+    width: 8em; }
+  #user_new p input[type="text"], #user_new p [type="password"] {
+    width: 9em; }
+  #user_new p input[type="submit"] {
+    width: 16em; }
+
+#navigation_menu .menu_item {
+  display: block;
+  text-decoration: none;
+  color: #666666;
+  padding-bottom: 16px;
+  vertical-align: middle; }
+  #navigation_menu .menu_item .menu_item_text {
+    margin: 0 0 0 32px;
+    padding: 8px 0 8px 8px; }
+  #navigation_menu .menu_item .menu_icon {
+    float: left;
+    width: 32px;
+    height: 32px;
+    background: url("/images/menu_sprite.png"); }
+  #navigation_menu .menu_item #home_icon {
+    background-position: 0px -136px; }
+  #navigation_menu .menu_item #profile_icon {
+    background-position: 0px -68px; }
+  #navigation_menu .menu_item #contacts_icon {
+    background-position: 0px -170px; }
+  #navigation_menu .menu_item #photos_icon {
+    background-position: 0px -238px; }
+#navigation_menu .menu_item:hover {
+  color: #444444; }
+  #navigation_menu .menu_item:hover #home_icon {
+    background-position: 0px -34px; }
+  #navigation_menu .menu_item:hover #profile_icon {
+    background-position: 0px 0px; }
+  #navigation_menu .menu_item:hover #contacts_icon {
+    background-position: 0px -102px; }
+  #navigation_menu .menu_item:hover #photos_icon {
+    background-position: 0px -204px; }
+
+.profile_container {
+  overflow: hidden; }
+  .profile_container #profile_head {
+    overflow: hidden;
+    border-bottom: 2px dashed #666666; }
+    .profile_container #profile_head #status_container {
+      float: right;
+      text-align: right;
+      height: 2em; }
+      .profile_container #profile_head #status_container form {
+        display: inline; }
+      .profile_container #profile_head #status_container .status_label {
+        text-align: left; }
+      .profile_container #profile_head #status_container #status_label:hover {
+        color: #919191;
+        cursor: pointer; }
+      .profile_container #profile_head #status_container #status_input {
+        display: none; }
+    .profile_container #profile_head #name_container {
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      float: left; }
+  .profile_container #profile_body {
+    padding-top: 1em; }
+    .profile_container #profile_body #profile_left_panel {
+      float: left;
+      width: 20em; }
+      .profile_container #profile_body #profile_left_panel .avatar {
+        display: block;
+        max-width: 20em;
+        border: 2px solid #666666;
+        border-radius: 1em;
+        margin-bottom: 1em; }
+      .profile_container #profile_body #profile_left_panel .profile_friends_list {
+        margin-top: 1em;
+        border-radius: 1em; }
+    .profile_container #profile_body .small_user_info {
+      width: 5em;
+      float: left;
+      margin: 0.5em;
+      text-align: center; }
+      .profile_container #profile_body .small_user_info img {
+        max-width: 5em;
+        display: block; }
+      .profile_container #profile_body .small_user_info span {
+        font-size: 0.8em; }
+    .profile_container #profile_body #profile_right_panel {
+      margin-left: 26em; }
+      .profile_container #profile_body #profile_right_panel #profile_info .delimiter {
+        padding: 0.3em;
+        border-bottom: 1px solid grey; }
+      .profile_container #profile_body #profile_right_panel #wall_container {
+        margin-top: 1em;
+        border-radius: 1em; }
+        .profile_container #profile_body #profile_right_panel #wall_container #wall_message_form {
+          padding-right: 0.5em;
+          border-bottom: 1px solid #666666; }
+          .profile_container #profile_body #profile_right_panel #wall_container #wall_message_form form {
+            display: block; }
+            .profile_container #profile_body #profile_right_panel #wall_container #wall_message_form form input[type="submit"] {
+              display: block;
+              width: 5em;
+              height: 2em;
+              margin: 0.5em; }
+            .profile_container #profile_body #profile_right_panel #wall_container #wall_message_form form textarea {
+              resize: none;
+              width: 100%; }
+        .profile_container #profile_body #profile_right_panel #wall_container .wall_message {
+          overflow: hidden;
+          border-bottom: 1px solid #666666; }
+          .profile_container #profile_body #profile_right_panel #wall_container .wall_message .wall_message_author_info {
+            overflow: hidden;
+            float: left; }
+          .profile_container #profile_body #profile_right_panel #wall_container .wall_message .wall_message_text {
+            float: left;
+            padding-top: 0.5em; }
+
+.profile_item {
+  overflow: hidden;
+  font-size: 0.8em; }
+  .profile_item .profile_key {
+    display: block;
+    float: left;
+    width: 8em;
+    border-right: 2px solid #666666;
+    margin-right: 1em;
+    font-weight: bolder; }
+
+.contact_container {
+  overflow: hidden;
+  margin: 1em;
+  padding: 1em;
+  border-bottom: 1px solid #666666; }
+  .contact_container .contact_avatar {
+    display: block;
+    border: 2px solid #666666;
+    border-radius: 1em;
+    margin-right: 1em;
+    float: left;
+    max-width: 10em; }
+  .contact_container .contact_info .contact_info_head {
+    font-weight: bolder;
+    border-bottom: 1px solid #666666;
+    margin-left: 10em; }
+    .contact_container .contact_info .contact_info_head a {
+      text-decoration: none; }
+
+.text_head {
+  font-weight: bolder;
+  margin-bottom: 1em; }
+
+.text_head:first-letter {
+  text-transform: uppercase; }
+
+#albums_index .album_index_item {
+  overflow: hidden; }
+  #albums_index .album_index_item a {
+    display: inline;
+    text-decoration: none; }
+    #albums_index .album_index_item a .album_index_item_name {
+      float: left;
+      width: 15em; }
+#albums_index #album_create_form {
+  display: block;
+  margin-top: 2em;
+  color: #444444; }

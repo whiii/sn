@@ -1,0 +1,48 @@
+#profile_info
+  %p.profile_item
+    %span.profile_key
+      Gender
+    %span.profile_value
+      = profile.gender
+  %p.profile_item
+    %span.profile_key
+      Date of birth
+    %span.profile_value
+      = profile.birth_date
+      //.strftime('%B %e, %Y')
+
+  .delimiter
+
+  %p.profile_item
+    %span.profile_key
+      Country
+    %span.profile_value
+      = profile.country
+  %p.profile_item
+    %span.profile_key
+      City
+    %span.profile_value
+      = profile.city
+  %p.profile_item
+    %span.profile_key
+      School
+    %span.profile_value
+      = profile.school
+
+  .delimiter
+
+  %p.profile_item
+    %span.profile_key
+      Phone
+    %span.profile_value
+      = profile.phone_number
+  %p.profile_item
+    %span.profile_key
+      Skype
+    %span.profile_value
+      = profile.skype_id
+  %p.profile_item
+    %span.profile_key
+      ICQ
+    %span.profile_value
+      = profile.icq_number

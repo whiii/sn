@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @album.name
+%p
+  = render 'photos/photos', :photos => @album.photos
+
+= link_to 'Back to '+@album.user.firstname.possessive+' albums', user_albums_path(@album.user)

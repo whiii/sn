@@ -1,0 +1,10 @@
+%h1 Editing profile
+
+%textfield
+  %legend 
+    Avatar
+  = form_for @profile, :html => {:multipart => true} do |f|
+    = f.file_field :avatar
+    = f.submit "Save"
+
+= render 'form'

@@ -1,0 +1,17 @@
+#navigation_menu
+  = link_to current_user.profile, :class => "menu_item" do
+    #home_icon.menu_icon
+    %p.menu_item_text
+      Home
+  = link_to edit_profile_path(current_user.profile), :class => "menu_item" do
+    #profile_icon.menu_icon
+    %p.menu_item_text
+      Profile
+  = link_to user_contacts_path(current_user), :class => "menu_item" do
+    #contacts_icon.menu_icon
+    %p.menu_item_text
+      Contacts
+  = link_to user_albums_path(current_user), :class => "menu_item" do
+    #photos_icon.menu_icon
+    %p.menu_item_text
+      Photos
