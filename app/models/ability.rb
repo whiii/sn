@@ -9,6 +9,8 @@ class Ability
       can :manage, Friendship
     else
       can :read, :all
+      cannot :read, User
+      can :daily_stats, User
       can :manage, Profile do |profile|
         profile.try(:user) == user
       end

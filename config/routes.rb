@@ -9,6 +9,7 @@ Sn::Application.routes.draw do
   devise_for :users, :path_names => { :registration => :register }
 
   resources :users do
+    get '/daily_stats', :on => :collection
     resources :wall_messages, :only => [:index, :create]
     resources :contacts, :only => :index do
       get '/pending', :action => :index_pending, :as => :pending, :on => :collection
@@ -23,11 +24,11 @@ Sn::Application.routes.draw do
     end
   end
 
+  resources :photos, :only => [:edit, :update, :destroy]
+
   resources :albums, :except => [:new, :edit, :update] do
     resources :photos, :only => [:new, :create]
   end
-
-  resources :photos, :only => [:show, :edit, :update, :destroy]
 
   resources :profiles, :only => [:show, :edit, :update] do
     post '/status', :action => :update_status, :as => :status

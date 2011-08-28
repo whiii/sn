@@ -43,5 +43,12 @@ class User < ActiveRecord::Base
     self.friends.each {|f| WallMessage.create :user => f, :sender => self, 
       :text => message}
   end
+
+  def self.get_daily_stats (from, to)
+    (from .. to).inject({}) do |result, day|
+      result[day.strftime("%d/%m/%Y")] = User.where(:created_at => day.beginning_of_day..day.end_of_day).count
+      result
+    end
+  end
   
 end

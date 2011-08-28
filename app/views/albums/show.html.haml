@@ -6,4 +6,6 @@
 %p
   = render 'photos/photos', :photos => @album.photos
 
+= link_to 'Add photo', new_album_photo_path(@album) if can?(:manage, @album)
+%br/
 = link_to 'Back to '+@album.user.firstname.possessive+' albums', user_albums_path(@album.user)

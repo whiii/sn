@@ -41,7 +41,7 @@ class PhotosController < ApplicationController
   def destroy
 
     @photo.destroy
-    redirect_to photos_url
+    redirect_to @photo.album
   end
 
   private

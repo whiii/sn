@@ -10,7 +10,6 @@
         (
         = album.photos.count
         photos )
-      = link_to ' | Add photo', new_album_photo_path(album) if can?(:manage, album)
       = link_to ' | Delete', album, :confirm => 'Are you sure?', :method => :delete if can?(:destroy, album)
 
   = render 'create_form', :album => @new_album if @new_album

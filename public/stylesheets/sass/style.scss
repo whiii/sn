@@ -74,6 +74,7 @@ a {
   padding: 1em;
   background: $light-grey;
   border-radius: 1em;
+  overflow: hidden;
 }
 
 #footer{
@@ -353,4 +354,19 @@ body:before {
     margin-top: 2em;
     color: $dark-grey;
   }
+}
+
+#lightbox_gallery {
+  overflow: hidden;
+  .photo_thumb_container {
+    float: left;
+    margin: 0.5em;
+    a {
+      font-size: 0.8em;
+    }
+  }
+}
+
+.fusionchart {
+  float: left;
 }

@@ -29,14 +29,15 @@ $(function (){
     this.id = chart_id + "_container";
     var container_id = this.id;
     $.get(url, null, function(dataXML){
+      xmlString = (new XMLSerializer()).serializeToString(dataXML);;
       var chart_path = "FusionCharts/"+chart_name+".swf";
       var chart = new FusionCharts(chart_path, chart_id, chart_width, chart_height);
-      chart.setXMLData(dataXML);
+      chart.setXMLData(xmlString);
       chart.render(container_id);
-    }, "text");    
+    }, "xml");    
   })
 })
 
 $(function() {
-  $('#lightbox_gallery a').lightBox(); // Select all links in object with gallery ID
+  $("#lightbox_gallery a.gallery_item").lightBox(); // Select all links in object with gallery ID
 });

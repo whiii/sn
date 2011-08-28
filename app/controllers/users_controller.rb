@@ -51,4 +51,17 @@ class UsersController < ApplicationController
       format.html { redirect_to(users_url) }
     end
   end
+
+  def daily_stats
+    from = Date.parse params[:from]
+    to = Date.parse params[:to]
+    respond_to do |format|
+      format.html
+      format.xml do 
+        @stats = User.get_daily_stats(from, to)
+        render(:layout => false)
+      end
+    end
+  end
+
 end

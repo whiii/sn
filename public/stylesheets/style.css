@@ -58,7 +58,8 @@ a {
   margin: 1em 1em 1em 18em;
   padding: 1em;
   background: #eeeeee;
-  border-radius: 1em; }
+  border-radius: 1em;
+  overflow: hidden; }
 
 #footer {
   width: 100%;
@@ -258,3 +259,14 @@ body:before {
   display: block;
   margin-top: 2em;
   color: #444444; }
+
+#lightbox_gallery {
+  overflow: hidden; }
+  #lightbox_gallery .photo_thumb_container {
+    float: left;
+    margin: 0.5em; }
+    #lightbox_gallery .photo_thumb_container a {
+      font-size: 0.8em; }
+
+.fusionchart {
+  float: left; }
