@@ -15,3 +15,10 @@
     #photos_icon.menu_icon
     %p.menu_item_text
       Photos
+  - if current_user.admin?
+    %hr/
+    = link_to users_path, :class => "menu_item" do
+      #admin_icon.menu_icon
+      %p.menu_item_text
+        Administration
+    

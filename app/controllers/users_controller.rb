@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  load_and_authorize_resource
+  load_and_authorize_resource :except => :daily_stats
 
   def index
     @users = User.all
@@ -53,6 +53,7 @@ class UsersController < ApplicationController
   end
 
   def daily_stats
+    authorize! :view_stats, User
     from = Date.parse params[:from]
     to = Date.parse params[:to]
     respond_to do |format|

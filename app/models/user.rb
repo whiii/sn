@@ -26,14 +26,14 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :firstname, :lastname, :password, :password_confirmation, :remember_me,
-                  :confirmation_token, :confirmed_at, :confirmation_sent_at
+                  :confirmation_token, :confirmed_at, :confirmation_sent_at, :is_admin
 
   validates_presence_of :firstname, :lastname
   validates_length_of :firstname, :lastname, :maximum => 16,
     :too_long => "%{count} characters is the maximum allowed"
   
 
-  before_create :build_profile
+  after_create :build_profile
 
   def admin?
     self.is_admin    

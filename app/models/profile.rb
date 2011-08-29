@@ -12,7 +12,7 @@ class Profile < ActiveRecord::Base
   validates_length_of :country, :city, :school, :phone_number, :skype_id, :maximum => 16,
     :too_long => "%{count} characters is the maximum allowed"
   validates_format_of :icq_number, :with => /^[1-9][0-9]{4,8}$/,
-    :message => "Invalid ICQ UIN"
+    :message => "Invalid ICQ UIN", :allow_nil => true
   validates_length_of :status, :maximum => 64,
     :too_long => "%{count} characters is the maximum allowed"
 

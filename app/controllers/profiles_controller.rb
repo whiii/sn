@@ -14,7 +14,13 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update_attributes(params[:profile])
-        format.html { redirect_to(@profile, :notice => 'Profile was successfully updated.') }
+        format.html do
+          unless @profile.user == current_user
+            redirect_to(@profile.user, :notice => 'Profile was successfully updated.')
+          else
+            redirect_to(@profile, :notice => 'Profile was successfully updated.')
+          end
+        end
       else
         format.html { render :action => "edit" }
       end

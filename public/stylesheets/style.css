@@ -100,6 +100,9 @@ body:before {
   #user_new p input[type="submit"] {
     width: 16em; }
 
+#navigation_menu hr {
+  color: #eeeeee;
+  background-color: #eeeeee; }
 #navigation_menu .menu_item {
   display: block;
   text-decoration: none;
@@ -122,6 +125,8 @@ body:before {
     background-position: 0px -170px; }
   #navigation_menu .menu_item #photos_icon {
     background-position: 0px -238px; }
+  #navigation_menu .menu_item #admin_icon {
+    background-position: 0px -306px; }
 #navigation_menu .menu_item:hover {
   color: #444444; }
   #navigation_menu .menu_item:hover #home_icon {
@@ -132,6 +137,8 @@ body:before {
     background-position: 0px -102px; }
   #navigation_menu .menu_item:hover #photos_icon {
     background-position: 0px -204px; }
+  #navigation_menu .menu_item:hover #admin_icon {
+    background-position: 0px -272px; }
 
 .profile_container {
   overflow: hidden; }
