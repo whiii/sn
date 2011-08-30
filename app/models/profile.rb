@@ -9,12 +9,10 @@ class Profile < ActiveRecord::Base
   validates_uniqueness_of :user_id
   validates_inclusion_of :gender, :in => ["Male", "Female"], :allow_nil => true
   validates_date_of :birth_date, :before => Proc.new { Time.now }, :allow_nil => true
-  validates_length_of :country, :city, :school, :phone_number, :skype_id, :maximum => 16,
-    :too_long => "%{count} characters is the maximum allowed"
+  validates_length_of :country, :city, :school, :phone_number, :skype_id, :maximum => 16
   validates_format_of :icq_number, :with => /^[1-9][0-9]{4,8}$/,
     :message => "Invalid ICQ UIN", :allow_nil => true
-  validates_length_of :status, :maximum => 64,
-    :too_long => "%{count} characters is the maximum allowed"
+  validates_length_of :status, :maximum => 64
 
   has_attached_file :avatar, 
     :styles => {

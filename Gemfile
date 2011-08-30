@@ -19,3 +19,9 @@ gem "paperclip", "~> 2.3"
 gem 'will_paginate', '~> 3.0.pre4'
 gem 'possessive'
 gem 'date_validator'
+
+group :test, :development do
+  gem 'rspec-rails', '~> 2.6'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+end
