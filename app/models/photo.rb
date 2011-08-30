@@ -4,9 +4,11 @@ class Photo < ActiveRecord::Base
 
   attr_accessible :image, :comment, :created_at
 
-  validates_presence_of :album, :image
-  validates_length_of :comment, :maximum => 64,
-    :too_long => "%{count} characters is the maximum allowed"
+  validates_presence_of :album
+  validates_attachment_presence :image
+  validates_attachment_content_type :image, :content_type => /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)$/
+  validates_attachment_size :image, :less_than => 5.megabytes
+  validates_length_of :comment, :maximum => 64
 
   has_attached_file :image, 
     :styles => {

@@ -13,6 +13,8 @@ class Profile < ActiveRecord::Base
   validates_format_of :icq_number, :with => /^[1-9][0-9]{4,8}$/,
     :message => "Invalid ICQ UIN", :allow_nil => true
   validates_length_of :status, :maximum => 64
+  validates_attachment_content_type :avatar, :content_type => /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)$/
+  validates_attachment_size :avatar, :less_than => 5.megabytes
 
   has_attached_file :avatar, 
     :styles => {

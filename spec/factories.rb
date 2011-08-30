@@ -19,3 +19,14 @@ Factory.define :profile do |f|
   f.skype_id 'qwe123'
   f.icq_number '1234567'
 end
+
+Factory.define :album do |f|
+  f.user Factory.build(:user)
+  f.sequence(:name) { |n| "album#{n}" }
+end
+
+Factory.define :friendship do |f|
+  f.user Factory.build(:user)
+  f.target Factory.build(:user)
+  f.accepted false
+end

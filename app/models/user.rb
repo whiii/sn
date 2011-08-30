@@ -5,9 +5,9 @@ class User < ActiveRecord::Base
   has_one :profile, :dependent => :destroy
 
   has_many :accepted_friendships, :class_name => 'Friendship', :foreign_key => :user_id, 
-    :conditions => { :accepted => true }
+    :conditions => { :accepted => true }, :dependent => :destroy
   has_many :unaccepted_inversed_friendships, :class_name => 'Friendship', 
-    :foreign_key => :target_id, :conditions => { :accepted => false }
+    :foreign_key => :target_id, :conditions => { :accepted => false }, :dependent => :destroy
 
   has_many :friends, :through => :accepted_friendships, :source => :target
   has_many :potential_friends, :through => :unaccepted_inversed_friendships, 

@@ -2,6 +2,7 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'paperclip/matchers'
 
 require File.dirname(__FILE__) + "/model_macros"
 
@@ -28,4 +29,5 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
   config.include(ModelMacros, :type => :model)
+  config.include Paperclip::Shoulda::Matchers
 end

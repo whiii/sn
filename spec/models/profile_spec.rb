@@ -6,6 +6,9 @@ describe Profile do
     before :all do
       Factory(:profile)
     end
+    after :all do
+      User.destroy_all
+    end
     it { should validate_presence_of(:user) }
     it { should validate_uniqueness_of(:user_id) }
     it { should validate_format_of(:icq_number).with(/^[1-9][0-9]{4,8}$/) }
@@ -15,6 +18,10 @@ describe Profile do
     it { should allow_value(10.years.ago).for(:birth_date) }
     it { should_not allow_value(1.days.from_now).for(:birth_date) }
     it { should ensure_length_of(:status).is_at_most(64) }
+    it { should validate_attachment_content_type(:avatar).
+                  allowing('image/png', 'image/gif').
+                  rejecting('text/plain', 'text/xml') }
+    #it { should validate_attachment_size(:avatar).less_than(5.megabytes) }
     it_should_ensure_length_at_most(16, :country, :city, :school, :phone_number, :skype_id)
   end
 

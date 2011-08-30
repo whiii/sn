@@ -5,8 +5,8 @@ class Friendship < ActiveRecord::Base
   belongs_to :user
   belongs_to :target, :class_name => 'User'
 
-  validates_presence_of [:user, :target]
-  validates_uniqueness_of :target, :scope => :user_id 
+  validates_presence_of :user, :target
+  validates_uniqueness_of :target_id, :scope => :user_id 
 
   after_destroy :delete_inverse_friendship
 
@@ -25,7 +25,7 @@ class Friendship < ActiveRecord::Base
   private
 
     def delete_inverse_friendship
-      Friendship.where(:user_id => self.target.id, :target_id => self.user.id).delete_all
+      Friendship.where(:user_id => self.target.try('id'), :target_id => self.user.try('id')).delete_all
     end
     
 end
