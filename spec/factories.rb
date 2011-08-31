@@ -4,6 +4,8 @@ Factory.define :user do |f|
   f.password 'foobar'
   f.password_confirmation { |u| u.password }
   f.sequence(:email) { |n| "foo#{n}@example.com" }
+  f.confirmation_token nil
+  f.confirmed_at DateTime.now
 end
 
 Factory.define :profile do |f|

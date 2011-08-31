@@ -22,6 +22,14 @@ gem 'date_validator'
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.6'
+end
+
+group :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'escape_utils'
 end

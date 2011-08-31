@@ -6,8 +6,9 @@
       = link_to contact.profile do
         = contact.firstname
         = contact.lastname
-        , 
-        = pluralize(contact.profile.age, "year")
+        - if contact.profile.birth_date
+          , 
+          = pluralize(contact.profile.age, "year")
     .contact_info_body
       %p.profile_item
         %span.profile_key

@@ -1,5 +1,12 @@
 = form_for @profile do |f|
 
+  -if @profile.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@profile.errors.count, "error")}:"
+      %ul
+        - @profile.errors.full_messages.each do |msg|
+          %li= msg
+
   = f.label :gender
   %span{:class => 'gender_select'}
     = f.radio_button :gender, "Male"

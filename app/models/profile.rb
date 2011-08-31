@@ -26,9 +26,10 @@ class Profile < ActiveRecord::Base
     :default_url => "/system/avatars/missing_:style.jpg"
 
   def update_status(status)
+    return true if self.status == status
     self.status = status
     if self.save
-      self.user.spam_friends_walls_with status
+      self.user.spam_friends_walls_with status if status.length > 0
       true
     else
       false
