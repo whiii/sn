@@ -19,6 +19,7 @@ gem "paperclip", "~> 2.3"
 gem 'will_paginate', '~> 3.0.pre4'
 gem 'possessive'
 gem 'date_validator'
+gem 'thinking-sphinx', '2.0.5'
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.6'
@@ -32,4 +33,5 @@ group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'escape_utils'
+  gem 'launchy'
 end

@@ -1,0 +1,10 @@
+%b
+  Community
+%fieldset
+  %legend
+    Find users
+  = form_tag do
+    = text_field_tag :search_string, @search_string 
+    = submit_tag 'Search'
+= render :partial => 'contacts/contact', :collection => @users
+= will_paginate @users

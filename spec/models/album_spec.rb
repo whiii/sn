@@ -12,7 +12,7 @@ describe Album do
     end
     it { should validate_presence_of(:user) }
     it { should validate_presence_of(:name) }
-    it { should ensure_length_of(:name).is_at_most(16) }
+    it { should ensure_length_of(:name).is_at_most(32) }
     it { should validate_uniqueness_of(:name).scoped_to(:user_id) }
   end
 

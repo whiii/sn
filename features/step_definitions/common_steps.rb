@@ -44,6 +44,12 @@ When /^I click "([^"]*)"$/ do |selector|
   find(selector).click
 end
 
+When /^I choose "([^"]*)" file for "([^"]*)"$/ do |file_name, file_input|
+  file_input = file_input.to_sym
+  file_path = File.join(Rails.root, 'features', 'uploads', file_name)
+  attach_file(file_input, file_path)
+end
+
 Then /^I should see element with id "([^"]*)"$/ do |element_id|
   if page.respond_to? :should
     page.should have_xpath("//*[@id='#{element_id}']")

@@ -18,6 +18,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def search
+    if @search_string = params[:search_string]
+      @users = User.search @search_string, :page => params[:page], :per_page => 10
+    else
+      @users = User.paginate :page => params[:page], :per_page => 10 
+    end
+  end
+
   def create
     @user = User.new(params[:user])
     @user.confirmed_at = Time.now;

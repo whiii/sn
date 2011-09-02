@@ -10,7 +10,17 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-    when /^the contacts list of user with email "([^"]+)"$/
+    
+    when /^the new photo page for album "([^"]+)" of user with email "([^"]+)"$/
+       new_album_photo_path(Album.where(:user_id => User.find_by_email($2).id, :name => $1).first)
+
+    when /the album "([^"]+)" of user with email "([^"]+)"/
+      album_path(Album.where(:user_id => User.find_by_email($2).id, :name => $1).first)
+    
+    when /^the album list of user with email "([^"]+)"$/
+      user_albums_path(User.find_by_email($1))
+
+    when /^the contact list of user with email "([^"]+)"$/
       user_contacts_path(User.find_by_email($1))
 
     when /^the profile page of user with email "([^"]+)"$/

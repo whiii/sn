@@ -31,7 +31,21 @@ class User < ActiveRecord::Base
   validates_presence_of :firstname, :lastname
   validates_length_of :firstname, :lastname, :maximum => 16,
     :too_long => "%{count} characters is the maximum allowed"
-  
+
+  define_index do
+    indexes firstname, :sortable => true
+    indexes lastname, :sortable => true
+    indexes profile.status, :as => :status
+    indexes profile.country, :as => :country
+    indexes profile.city, :as => :city
+    indexes profile.school, :as => :school
+    indexes profile.phone_number, :as => :phone_number
+    indexes profile.skype_id, :as => :skype_id
+    indexes profile.icq_number, :as => :icq_number
+
+    has profile.gender, :as => :gender
+    has profile.birth_date, :as => :birth_date
+  end  
 
   after_create :build_profile
 

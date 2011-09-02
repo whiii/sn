@@ -5,6 +5,7 @@ class Ability
     alias_action :read, :create, :update, :destroy, :view_stats, :to => :administer
 
     can :read, :all
+    can :search, User
     can :manage, Profile do |profile|
       profile.try(:user) == user
     end

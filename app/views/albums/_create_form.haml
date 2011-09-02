@@ -1,5 +1,5 @@
 #album_create_form
   = form_for album do |f|
-    = f.label 'New album'
+    = f.label 'New album', :for => :name
     = f.text_field :name
     = f.submit 'Create'

@@ -21,7 +21,7 @@ class AlbumsController < ApplicationController
   def create
     respond_to do |format|
       if @album.update_attributes(params[:album])
-        format.html { redirect_to albums_url }
+        format.html { redirect_to user_albums_url(@album.user) }
       else
         format.html { render :action => "new" }
       end
@@ -30,7 +30,7 @@ class AlbumsController < ApplicationController
 
   def destroy
     @album.destroy
-    redirect_to albums_url
+    redirect_to user_albums_url(@album.user)
   end
 
   private

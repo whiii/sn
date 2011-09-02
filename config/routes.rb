@@ -10,6 +10,7 @@ Sn::Application.routes.draw do
 
   resources :users do
     get '/daily_stats', :on => :collection
+    get '/search', :on => :collection
     resources :wall_messages, :only => [:index, :create]
     resources :contacts, :only => :index do
       get '/pending', :action => :index_pending, :as => :pending, :on => :collection

@@ -35,7 +35,7 @@ Feature: Manage contacts
     And users "Johnny@qwe.aa" and "Jack@qwe.aa" are friends
     When I am in Johnny's browser
     And I sign in as "Johnny@qwe.aa/123123"
-    And I go to the contacts list of user with email "Johnny@qwe.aa"
+    And I go to the contact list of user with email "Johnny@qwe.aa"
     Then I should see "Jack Daniels"
 
     When I press "Remove from contacts"

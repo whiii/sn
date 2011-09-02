@@ -3,6 +3,8 @@
     .photo_thumb_container
       = link_to photo.image(:for_gallery), :class => :gallery_item do
         %img{:src => photo.image(:thumb)}
+        %p
+          = truncate(photo.comment, :length => 16)
       - if can? :manage, photo
         .photo_controls
           = link_to 'Edit', edit_photo_path(photo)
