@@ -150,6 +150,9 @@ body:before {
     #home_icon {
       background-position: 0px -136px;
     }
+    #search_icon {
+      background-position: 0px -374px;
+    }
     #profile_icon {
       background-position: 0px -68px;
     }
@@ -167,6 +170,9 @@ body:before {
     color: $dark-grey;
     #home_icon {
       background-position: 0px -34px;
+    }
+    #search_icon {
+      background-position: 0px -340px;
     }
     #profile_icon {
       background-position: 0px 0px;
@@ -377,6 +383,23 @@ body:before {
   }
 }
 
-.fusionchart {
+#chart_controls {
+  margin-left: 480px;
+  overflow: hidden;
+  border-radius: 1em;
+  border-color: $light-grey;
+  width: 18em;
+  label {
+    display: block;
+    width: 4em;
+    float: left;
+  }
+  input[type = "submit"] {
+    margin-top: 0.5em;
+  }
+}
+
+#charts {
+  width: 450px;
   float: left;
 }

@@ -45,6 +45,8 @@ class User < ActiveRecord::Base
 
     has profile.gender, :as => :gender
     has profile.birth_date, :as => :birth_date
+
+    set_property :delta => :delayed
   end  
 
   after_create :build_profile

@@ -3,8 +3,11 @@
 %fieldset
   %legend
     Find users
-  = form_tag do
+  = form_tag search_users_path, :method => :get do
     = text_field_tag :search_string, @search_string 
     = submit_tag 'Search'
+%br/
+Total found: 
+= pluralize(@users.total_entries, 'user')
 = render :partial => 'contacts/contact', :collection => @users
 = will_paginate @users

@@ -119,6 +119,8 @@ body:before {
     background: url("/images/menu_sprite.png"); }
   #navigation_menu .menu_item #home_icon {
     background-position: 0px -136px; }
+  #navigation_menu .menu_item #search_icon {
+    background-position: 0px -374px; }
   #navigation_menu .menu_item #profile_icon {
     background-position: 0px -68px; }
   #navigation_menu .menu_item #contacts_icon {
@@ -131,6 +133,8 @@ body:before {
   color: #444444; }
   #navigation_menu .menu_item:hover #home_icon {
     background-position: 0px -34px; }
+  #navigation_menu .menu_item:hover #search_icon {
+    background-position: 0px -340px; }
   #navigation_menu .menu_item:hover #profile_icon {
     background-position: 0px 0px; }
   #navigation_menu .menu_item:hover #contacts_icon {
@@ -275,5 +279,19 @@ body:before {
     #lightbox_gallery .photo_thumb_container a {
       font-size: 0.8em; }
 
-.fusionchart {
+#chart_controls {
+  margin-left: 480px;
+  overflow: hidden;
+  border-radius: 1em;
+  border-color: #eeeeee;
+  width: 18em; }
+  #chart_controls label {
+    display: block;
+    width: 4em;
+    float: left; }
+  #chart_controls input[type="submit"] {
+    margin-top: 0.5em; }
+
+#charts {
+  width: 450px;
   float: left; }

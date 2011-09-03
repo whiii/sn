@@ -1,3 +1,24 @@
-Test chart
-= fusionchart("TestChart1", "Line", "daily_stats?from=#{params[:from]}&to=#{params[:to]}", "400", "300")
-= fusionchart("TestChart2", "Column3D", "daily_stats?from=#{params[:from]}&to=#{params[:to]}", "400", "300")
+#charts
+  %ul.charts_tabs
+    %li
+      %a{:href => '#line_chart'}
+        Line chart
+    %li
+      %a{:href => '#column_chart'}
+        Column chart
+  #line_chart
+    = fusionchart("TestChart1", "Line", "daily_stats?from=#{@from}&to=#{@to}", "400", "300")
+  #column_chart
+    = fusionchart("TestChart2", "Column3D", "daily_stats?from=#{@from}&to=#{@to}", "400", "300")
+
+%fieldset#chart_controls
+  %legend
+    User registrations
+  = form_tag daily_stats_users_path, :method => :get do
+    = label_tag :from
+    = text_field_tag :from, @from, :class => :datepicker
+    %br/
+    = label_tag :to
+    = text_field_tag :to, @to, :class => :datepicker
+    %br/
+    = submit_tag 'Recalculate'

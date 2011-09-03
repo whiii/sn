@@ -25,6 +25,8 @@ class Profile < ActiveRecord::Base
     }, :convert_options => { :all => '-background white -flatten +matte'}, 
     :default_url => "/system/avatars/missing_:style.jpg"
 
+  after_save :set_user_delta_flag
+
   def update_status(status)
     return true if self.status == status
     self.status = status
@@ -42,5 +44,12 @@ class Profile < ActiveRecord::Base
     age -= 1 if Date.today < birthday + age.years #for days before birthday
     age
   end
+
+  private
+  
+    def set_user_delta_flag
+      user.delta = true
+      user.save
+    end
 
 end

@@ -40,4 +40,6 @@ $(function (){
 
 $(function() {
   $("#lightbox_gallery a.gallery_item").lightBox(); // Select all links in object with gallery ID
+  $(".datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
+  $("#charts").tabs();
 });

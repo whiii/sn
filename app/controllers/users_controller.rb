@@ -19,11 +19,15 @@ class UsersController < ApplicationController
   end
 
   def search
-    if @search_string = params[:search_string]
-      @users = User.search @search_string, :page => params[:page], :per_page => 10
-    else
-      @users = User.paginate :page => params[:page], :per_page => 10 
-    end
+    @search_string = params[:search_string]
+    @search_string = nil if (@search_string && @search_string.length == 0)
+    search_params = {
+      :page => params[:page],
+      :per_page => 10,
+      :star => true,
+      :match_mode => @search_string ? :any : :fullscan,
+    }
+    @users = User.search @search_string, search_params
   end
 
   def create
@@ -62,12 +66,17 @@ class UsersController < ApplicationController
 
   def daily_stats
     authorize! :view_stats, User
-    from = Date.parse params[:from]
-    to = Date.parse params[:to]
+    begin
+      @from = Date.parse params[:from]
+      @to = Date.parse params[:to]
+    rescue
+      @from = Date.today.beginning_of_week
+      @to = Date.today.end_of_week
+    end
     respond_to do |format|
       format.html
       format.xml do 
-        @stats = User.get_daily_stats(from, to)
+        @stats = User.get_daily_stats(@from, @to)
         render(:layout => false)
       end
     end

@@ -3,6 +3,10 @@
     #home_icon.menu_icon
     %p.menu_item_text
       Home
+  = link_to search_users_path, :class => "menu_item" do
+    #search_icon.menu_icon
+    %p.menu_item_text
+      Search
   = link_to edit_profile_path(current_user.profile), :class => "menu_item" do
     #profile_icon.menu_icon
     %p.menu_item_text
